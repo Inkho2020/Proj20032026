@@ -4,11 +4,11 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from core.config import settings
-from core.base import Base
-from core.db_helper import db_helper
-import core.models_products
-from routers import items, users
+from app.core.config import settings
+from app.core.base import Base
+from app.core.db_helper import db_helper
+from app.routers import items, users
+from app.api_v1 import router as router_v1
 
 origins = ["http://localhost:8080"]
 
@@ -30,6 +30,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+app.include_router(router=router_v1, prefix=settings.api_v1_prefix)
 app.include_router(items.router)
 app.include_router(users.router)
 
