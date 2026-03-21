@@ -1,19 +1,26 @@
 import uvicorn
+from contextlib import asynccontextmanager
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+
+from core.config import settings
+from core.base import Base
+from core.db_helper import db_helper
+import core.models_products
 from routers import items, users
 
 origins = ["http://localhost:8080"]
 
-app = FastAPI(
-    title="APP-Shop",
-    description="",
-    version="0.1.0",
-    on_startup=None,
-    on_shutdown=None,
-    lifespan=None,
-    # contact="khoin2@yahoo.com"
-)
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    async with db_helper.engine.begin() as conn:
+        await conn.run_sync(Base.metadata.create_all)
+    yield
+
+
+app = FastAPI(title="APP-Shop", description="", version="0.1.0", lifespan=lifespan)
 
 app.add_middleware(
     CORSMiddleware,
