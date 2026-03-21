@@ -3,9 +3,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from routers import items, users
 
-origins = [
-    "http://localhost:8080"
-]
+origins = ["http://localhost:8080"]
 
 app = FastAPI(
     title="APP-Shop",
@@ -34,5 +32,5 @@ def read_root():
     return {"Hello": "World"}
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     uvicorn.run("main:app", reload=True)
