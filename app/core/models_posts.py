@@ -16,7 +16,7 @@ class Post(UserRalationMixin, Base):
     content: Mapped[str] = mapped_column(
         Text,
         default="",
-        server_defaul="",
+        server_default="",
     )
     # import from app.core.models_mixins UserRelationMixin
     # user_id: Mapped[int] = mapped_column(
@@ -25,3 +25,9 @@ class Post(UserRalationMixin, Base):
 
     # TYPE_CHECKING: USER from models_users
     # user: Mapped["User"] = relationship(back_populates="posts")
+
+    def __str__(self):
+        return f"{self.__class__.__name__}(id={self.id}, title={self.title!r})"
+
+    def __repr__(self):
+        return str(self)

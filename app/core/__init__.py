@@ -6,6 +6,7 @@ from app.core.models_products import Product
 from app.core.models_posts import Post
 from app.core.models_mixins import UserRalationMixin
 from app.core.models_users_profile import Profile
+from app.core.models_orders import Order
 
 __all__ = (
     "Base",
@@ -16,4 +17,5 @@ __all__ = (
     "Post",
     "UserRalationMixin",
     "Profile",
+    "Order",
 )
