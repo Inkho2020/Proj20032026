@@ -5,4 +5,11 @@ from app.core.models_users import User
 from app.core.models_products import Product
 from app.core.models_posts import Post
 
-__all__ = ("Base", "settings", "db_helper", "Product", "User", "Post")
+__all__ = (
+    "Base",
+    "settings",
+    "db_helper",
+    "Product",
+    "User",
+    "Post",
+)
