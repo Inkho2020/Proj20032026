@@ -7,7 +7,7 @@ from app.core.models_posts import Post
 from app.core.models_mixins import UserRalationMixin
 from app.core.models_users_profile import Profile
 from app.core.models_orders import Order
-from app.core.models_orders_products import order_product_association_table
+from app.core.models_orders_products import OrderProductAssociation
 
 __all__ = (
     "Base",
@@ -19,5 +19,5 @@ __all__ = (
     "UserRalationMixin",
     "Profile",
     "Order",
-    "order_product_association_table",
+    "OrderProductAssociation",
 )
