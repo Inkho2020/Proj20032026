@@ -13,10 +13,11 @@ from app.api_v1 import router as router_v1
 origins = ["http://localhost:8080"]
 
 
+# при создании alembic больше не нужно создавть таблицы в ручную
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    async with db_helper.engine.begin() as conn:
-        await conn.run_sync(Base.metadata.create_all)
+    # async with db_helper.engine.begin() as conn:
+    #     await conn.run_sync(Base.metadata.create_all)
     yield
 
 
