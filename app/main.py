@@ -7,6 +7,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.core.config import settings
 from app.core.base import Base
 from app.core.db_helper import db_helper
+from app.core import models_users, models_products
 from app.routers import items, users
 from app.api_v1 import router as router_v1
 
