@@ -4,6 +4,8 @@ from app.core.db_helper import db_helper
 from app.core.models_users import User
 from app.core.models_products import Product
 from app.core.models_posts import Post
+from app.core.models_mixins import UserRalationMixin
+from app.core.models_users_profile import Profile
 
 __all__ = (
     "Base",
@@ -12,4 +14,6 @@ __all__ = (
     "Product",
     "User",
     "Post",
+    "UserRalationMixin",
+    "Profile",
 )
