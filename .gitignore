@@ -1,3 +1,7 @@
 venv
+.venv
 __pycache__
-crude_test.py.
+app2/
+/certs/
+/app/auth/README.md
+.idea

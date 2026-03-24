@@ -3,7 +3,7 @@ from pathlib import Path
 from pydantic import BaseModel
 
 BASE_DIR = Path(__file__).parent.parent.parent
-PRIVATE_KEY = BASE_DIR / "certs" / "jwt-privat.pem"
+PRIVATE_KEY = BASE_DIR / "certs" / "jwt-private.pem"
 PUBLIC_KEY = BASE_DIR / "certs" / "jwt-public.pem"
 DB_PATH = f"postgres:1234@localhost:5432/proj2"
 
