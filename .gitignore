@@ -1,3 +1,7 @@
 venv
 __pycache__
-crude_test.py.
+app2/
+/certs/jwt-privat.pem
+/certs/jwt-public.pem
+/app/auth/README.md
+.idea
