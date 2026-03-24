@@ -1,5 +1,3 @@
-from datetime import timedelta
-
 from app.auth import utils as auth_utils
 from app.core import settings
 from app.schemas.schema_users import UserSchema

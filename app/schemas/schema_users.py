@@ -12,3 +12,9 @@ class UserBase(BaseModel):
 class UserCreate(UserBase):
     pass
 
+
+class UserSchema(BaseModel):
+    username: str
+    password: str
+    email: EmailStr
+    is_active: bool = True

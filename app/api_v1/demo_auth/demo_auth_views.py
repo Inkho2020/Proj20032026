@@ -140,7 +140,7 @@ def demo_auth_check_cookie(
     }
 
 
-@router.get("/logou-cookie")
+@router.get("/logou-cookie", tags=["Logout"])
 def demo_auth_logout_cookie(
     response: Response,
     session_idd: str = Cookie(alias=COOKIE_SESSION_ID_KEY),

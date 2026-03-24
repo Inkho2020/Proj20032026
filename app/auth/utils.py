@@ -17,7 +17,7 @@ def encode_jwt(
 ):
     to_encode = payload.copy()
     if refresh_time:
-        expire = datetime.now() + timedelta(refresh_time)
+        expire = datetime.now() + timedelta(days=refresh_time)
     else:
         expire = datetime.now() + timedelta(token_life_time)
     to_encode.update(
@@ -53,9 +53,9 @@ def hash_pass(password: str) -> bytes:
 
 def validate_password(
     password: str,
-    hashed_password: bytes,
+    hashed_password: bytes | str,
 ) -> bool:
     return bcrypt.checkpw(
         password=password.encode("utf-8"),
-        hashed_password=hashed_password,
+        hashed_password=hashed_password.encode("utf-8"),
     )

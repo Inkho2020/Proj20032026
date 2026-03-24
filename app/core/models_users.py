@@ -10,6 +10,8 @@ if TYPE_CHECKING:
 
 class User(Base):
     name: Mapped[str] = mapped_column(String(50))
+    surname: Mapped[str]
+    email: Mapped[str]
 
     posts: Mapped[list["Post"]] = relationship(back_populates="user")
     profile: Mapped["Profile"] = relationship(back_populates="user")
